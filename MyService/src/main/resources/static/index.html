@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyService - Gestion de Produits</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🛍️ Gestion de Produits</h1>
+            <p class="subtitle">Application de gestion de produits avec API REST</p>
+        </header>
+
+        <div class="main-content">
+            <div class="search-section">
+                <input type="text" id="searchInput" placeholder="Rechercher un produit..." />
+                <button onclick="searchProducts()">Rechercher</button>
+                <button onclick="loadProducts()">Afficher tous</button>
+            </div>
+
+            <div class="form-section">
+                <h2 id="formTitle">Ajouter un nouveau produit</h2>
+                <form id="productForm">
+                    <input type="hidden" id="productId" />
+                    <div class="form-group">
+                        <label for="name">Nom:</label>
+                        <input type="text" id="name" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description:</label>
+                        <textarea id="description" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Prix:</label>
+                        <input type="number" id="price" step="0.01" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity">Quantité:</label>
+                        <input type="number" id="quantity" required />
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" id="submitBtn">Ajouter</button>
+                        <button type="button" onclick="resetForm()" id="cancelBtn" style="display:none;">Annuler</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="products-section">
+                <h2>Liste des produits</h2>
+                <div id="productsList" class="products-grid">
+                    <p class="loading">Chargement...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+

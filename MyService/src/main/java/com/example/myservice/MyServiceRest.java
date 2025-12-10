@@ -8,7 +8,12 @@ public class MyServiceRest {
 
     @GetMapping("/")
     public String sayHello(){
-        return "Hello";
+        return "Hello from MyService API!";
+    }
+
+    @GetMapping("/api/health")
+    public String health() {
+        return "Service is running";
     }
 
 }
